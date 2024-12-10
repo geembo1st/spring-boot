@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+</head>
+<body>
+<h1>People</h1>
+
+<form action="/people/find" method="get">
+    <label for="id">Введите ID:</label>
+    <input type="number" name="id" id="id" required>
+    <button type="submit">Найти пользователя</button>
+</form>
+
+<div th:if="${user != null}">
+    <h2>User Details</h2>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.age}"></td>
+        </tr>
+    </table>
+</div>
+
+<!-- Отображение списка людей -->
+<div th:if="${people != null}">
+    <h2>All People</h2>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+        <tr th:each="user : ${people}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.age}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
