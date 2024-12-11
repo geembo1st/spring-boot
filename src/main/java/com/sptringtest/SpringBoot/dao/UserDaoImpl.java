@@ -18,7 +18,6 @@ public class UserDaoImpl implements UserDao {
         entityManager.persist(user);
     }
 
-    @SuppressWarnings("unchecked")
     public List<User> showPeople() {
         return entityManager.createQuery("FROM User").getResultList();
     }
@@ -37,7 +36,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void updateUser(Long id, User user) {
-        entityManager.merge(user);
+    public void updateUser(Long id, User updateUser) {
+        entityManager.merge(updateUser);
     }
 }
