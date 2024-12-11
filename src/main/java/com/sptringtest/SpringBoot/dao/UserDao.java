@@ -10,5 +10,5 @@ public interface UserDao {
     List<User> showPeople();
     User showUserById(Long id);
     void deleteUserById(Long id);
-    void updateUser(Long id, User user);
+    void updateUser(Long id, User updateUser);
 }

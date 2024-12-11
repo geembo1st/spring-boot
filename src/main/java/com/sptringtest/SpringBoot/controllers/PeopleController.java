@@ -1,6 +1,7 @@
 package com.sptringtest.SpringBoot.controllers;
 
 import com.sptringtest.SpringBoot.model.User;
+import com.sptringtest.SpringBoot.repositories.PeopleRepositories;
 import com.sptringtest.SpringBoot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
